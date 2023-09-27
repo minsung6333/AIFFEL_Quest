@@ -35,7 +35,8 @@
 
 - [x]  **5. 코드가 간결하고 효율적인가요?**
       
-       <img width="730" alt="스크린샷 2023-09-27 오후 12 18 59" src="https://github.com/3n952/AIFFEL_Quest/assets/107621083/e7772b22-6ebe-4969-bc3d-23d292516736">
+      
+<img width="730" alt="스크린샷 2023-09-27 오후 12 18 59" src="https://github.com/3n952/AIFFEL_Quest/assets/107621083/e7772b22-6ebe-4969-bc3d-23d292516736">
 
 함수, 모듈화를 사용하여 파이써닉한 코드를 작성하였다.
 
