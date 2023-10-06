@@ -33,25 +33,8 @@
     - 파이썬 스타일 가이드 (PEP8) 를 준수하였는지 확인
           - 네 그렇습니다.
     - 하드코딩을 하지않고 함수화, 모듈화가 가능한 부분은 함수를 만들거나 클래스로 짰는지
-          ```python
-              # seg_picture(path,load)
-              def remove_picture(picture,a,label_name):
-                  #블러 이미지 생성
-                  img_orig_blur = cv2.blur(picture, (30,30))
-                  seg_color = get_colormap(label_name)
-                  seg_map = np.all(seg_picture(img_path,a)[1]==seg_color, axis=-1)
-                  img_mask = seg_map.astype(np.uint8) * 255
-                  img_mask_color = cv2.cvtColor(img_mask, cv2.COLOR_GRAY2BGR) #입력 이미지의 색상 채널을 변경
-                  img_bg_mask = cv2.bitwise_not(img_mask_color)
-                  img_bg_blur = cv2.bitwise_and(img_orig_blur, img_bg_mask)
-                  return img_bg_blur,img_mask_color
-          ```
     - 코드 중복을 최소화하고 범용적으로 사용할 수 있도록 함수화했는지
-          ```python
-            a=remove_picture(hum_orig,'photo_5.jpeg','person')[0]
-            b=remove_picture(mi_hum_orig,'photo_4.jpg','person')[0]
-            c=remove_picture(ani_orig,'Photo_cat.jpeg','cat')[0]
-          ```
+
 
 # 참고 링크 및 코드 개선
 ```
