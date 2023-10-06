@@ -16,7 +16,7 @@
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
     - 해당 코드 블럭에 doc string/annotation이 달려 있는지 확인
     - 해당 코드가 무슨 기능을 하는지, 왜 그렇게 짜여진건지, 작동 메커니즘이 뭔지 기술.
-          ![img](asset_for_review/img2.png)
+          ![img](asset_for_review/img2.png)  
           함수 remove_picture의 return 값은 두 개이다. img_bg_blur, img_mask_color
           img_bg_blur는 마스크 부분을 제외하고 배경을 블러 처리하였고 마스크 부분은 검은색이다.
           img_mask_color는 마스크 부분이 하얀색으로 칠하고 다른 부분은 검은색으로 칠한다
