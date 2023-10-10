@@ -1,4 +1,4 @@
-![image](https://github.com/minsung6333/AIFFEL_Quest/assets/48667883/15d1420f-1f1a-4cc0-8955-0247f5948988)# AIFFEL Campus Online Code Peer Review Templete
+# AIFFEL Campus Online Code Peer Review Templete
 - 코더 : 서민성
 - 리뷰어 : 김청빈
 
