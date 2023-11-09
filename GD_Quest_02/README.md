@@ -12,13 +12,13 @@
 - [ ]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
     - ```python3
-      # 데이터 호출 및 가공
-        from sklearn.feature_extraction.text import CountVectorizer
-        from sklearn.feature_extraction.text import TfidfTransformer
-        from tensorflow.keras.datasets import reuters
-        word_index = reuters.get_word_index(path="reuters_word_index.json")
+         # 데이터 호출 및 가공
+         from sklearn.feature_extraction.text import CountVectorizer
+         from sklearn.feature_extraction.text import TfidfTransformer
+         from tensorflow.keras.datasets import reuters
+         word_index = reuters.get_word_index(path="reuters_word_index.json")
         
-        # 인덱스 수정을 위한 전처리
+         # 인덱스 수정을 위한 전처리
         index_to_word = { index+3 : word for word, index in word_index.items() }
         dtmvector = CountVectorizer()
         tfidf_transformer = TfidfTransformer()
