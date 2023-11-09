@@ -13,50 +13,50 @@
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
     - ```python3
       # 데이터 호출 및 가공
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from tensorflow.keras.datasets import reuters
-word_index = reuters.get_word_index(path="reuters_word_index.json")
-
-# 인덱스 수정을 위한 전처리
-index_to_word = { index+3 : word for word, index in word_index.items() }
-dtmvector = CountVectorizer()
-tfidf_transformer = TfidfTransformer()
-
-
-# index_to_word에 숫자 0은 , 숫자 1은 , 숫자 2는 를 넣어줍니다.
-for index, token in enumerate(("", "", "")):
-  index_to_word[index]=token
-print('=3')
-
-# 데이터 전처리를 위한 가공함수 생성
-def data_tfidf(num_words):
-  (x_train, y_train), (x_test, y_test) = reuters.load_data(num_words= num_words, test_split=0.2)
-
-  # #decoding
-  decode_train = []
-  decode_test = []
-
-  for i in range(len(x_train)):
-    t = ' '.join([index_to_word[index] for index in x_train[i]])
-    decode_train.append(t)
-
-  for i in range(len(x_test)):
-    q = ' '.join([index_to_word[index] for index in x_test[i]])
-    decode_test.append(q)
-
-  x_train = decode_train
-  x_test = decode_test
-
-
-  x_train_dtm = dtmvector.fit_transform(x_train) #dtm 행렬 생성
-  tfidfv = tfidf_transformer.fit_transform(x_train_dtm) #tf-idf 행렬 생성
-
-  x_test_dtm = dtmvector.transform(x_test) #테스트 데이터를 DTM으로 변환
-  tfidfv_test = tfidf_transformer.transform(x_test_dtm) #DTM을 TF-IDF 행렬로 변환
-
-  return x_train, y_train, x_test, y_test, tfidfv, tfidfv_test
-  ```
+        from sklearn.feature_extraction.text import CountVectorizer
+        from sklearn.feature_extraction.text import TfidfTransformer
+        from tensorflow.keras.datasets import reuters
+        word_index = reuters.get_word_index(path="reuters_word_index.json")
+        
+        # 인덱스 수정을 위한 전처리
+        index_to_word = { index+3 : word for word, index in word_index.items() }
+        dtmvector = CountVectorizer()
+        tfidf_transformer = TfidfTransformer()
+        
+        
+        # index_to_word에 숫자 0은 , 숫자 1은 , 숫자 2는 를 넣어줍니다.
+        for index, token in enumerate(("", "", "")):
+          index_to_word[index]=token
+        print('=3')
+        
+        # 데이터 전처리를 위한 가공함수 생성
+        def data_tfidf(num_words):
+          (x_train, y_train), (x_test, y_test) = reuters.load_data(num_words= num_words, test_split=0.2)
+        
+          # #decoding
+          decode_train = []
+          decode_test = []
+        
+          for i in range(len(x_train)):
+            t = ' '.join([index_to_word[index] for index in x_train[i]])
+            decode_train.append(t)
+        
+          for i in range(len(x_test)):
+            q = ' '.join([index_to_word[index] for index in x_test[i]])
+            decode_test.append(q)
+        
+          x_train = decode_train
+          x_test = decode_test
+        
+        
+          x_train_dtm = dtmvector.fit_transform(x_train) #dtm 행렬 생성
+          tfidfv = tfidf_transformer.fit_transform(x_train_dtm) #tf-idf 행렬 생성
+        
+          x_test_dtm = dtmvector.transform(x_test) #테스트 데이터를 DTM으로 변환
+          tfidfv_test = tfidf_transformer.transform(x_test_dtm) #DTM을 TF-IDF 행렬로 변환
+        
+          return x_train, y_train, x_test, y_test, tfidfv, tfidfv_test
+      ```
   - 전처리 과정을 주석으로 잘 설명했다. 함수 내부에도 주석이 추가되면 좋을 것 같다.
         
 - [ ]  **3. 에러가 난 부분을 디버깅하여 문제를 “해결한 기록을 남겼거나” 
