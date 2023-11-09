@@ -70,16 +70,16 @@
 - [ ]  **5. 코드가 간결하고 효율적인가요?**
     - 위 코드 블럭에서처럼 전처리 과정의 일부를 함수화하였다.
     - ```python3
-     for i in ml_lst:
-  print(str(i))
-  tqdm(i.fit(tfidfv, y_train))
-  predicted = i.predict(tfidfv_test) #테스트 데이터에 대한 예측
-  # print("정확도:", accuracy_score(y_test, predicted)) #예측값과 실제값 비교
-  df = pd.DataFrame(classification_report(y_test, i.predict(tfidfv_test), zero_division=0, output_dict=True)).transpose()
-  precision_25000.append(df['precision'].values.tolist())
-  recall_25000.append(df['recall'].values.tolist())
-  f1_score_25000.append(df['f1-score'].values.tolist())
-   ```
+      for i in ml_lst:
+          print(str(i))
+          tqdm(i.fit(tfidfv, y_train))
+          predicted = i.predict(tfidfv_test) #테스트 데이터에 대한 예측
+          # print("정확도:", accuracy_score(y_test, predicted)) #예측값과 실제값 비교
+          df = pd.DataFrame(classification_report(y_test, i.predict(tfidfv_test), zero_division=0, output_dict=True)).transpose()
+          precision_25000.append(df['precision'].values.tolist())
+          recall_25000.append(df['recall'].values.tolist())
+          f1_score_25000.append(df['f1-score'].values.tolist())
+      ```
     모델 학습 및 예측 부분에서 위 코드가 반복되는데 이 부분을 함수화하면 코드의 가독성이 올라갈 것이다.
 
 # 참고 링크 및 코드 개선
